@@ -11,7 +11,7 @@ part.on.vbml_ignore_case = True
 KEYBOARD = (
 	Keyboard()
 	.add(Callback("Поиск", {"cmd": "search"}), KeyboardButtonColor.PRIMARY)
-	.add(Callback("Изменить настройки поиска", {"cmd": "change_settings"}), KeyboardButtonColor.PRIMARY)
+	#.add(Callback("Изменить настройки поиска", {"cmd": "change_settings"}), KeyboardButtonColor.PRIMARY)
 	.add(Callback("Показать настройки поиска", {"cmd": "view_settings"})))
 
 
