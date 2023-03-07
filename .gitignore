@@ -4,3 +4,4 @@ test.py
 # paths
 __pycache__/
 .vscode/
+db/
