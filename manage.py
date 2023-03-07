@@ -111,15 +111,14 @@ async def rate_profiles(persons) -> list:
 
 """Display preparing"""
 async def prepare(conn, user_id):
-	print('подготовка профилей')
 	person = await db.get_results(conn, user_id=user_id, not_seen=True)
 	if person == []:
 		while person == []:
 			profiles = await db.get_profiles(conn)
 			if len(profiles) > 0:
-				print(len(profiles), 'профилей пошло на оценку')
 				persons = await rate_profiles(profiles)
 				if len(persons) > 0:
 					await db.add_results(conn, user_id, persons)
+					person = await db.get_results(conn, user_id=user_id, not_seen=True)
 			elif len(profiles) == 0:
 				break
